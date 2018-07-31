@@ -27,6 +27,7 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
-    //调用数据表
+
+    //指定数据表，也可以不用指定，默认为文件名同名+s的数据表
     protected $table = 'users';
 }
