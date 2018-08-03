@@ -102,6 +102,12 @@ footer {
     font-size: 13px;
     font-weight: bold;
   }
+  #logout {
+  cursor: default;
+  &:hover {
+    background-color: transparent;
+  }
+}
 </style>
 @yield('style')
 <body>
@@ -115,6 +121,6 @@ footer {
         @include('layouts._footer')
       </div>
     </div>
-
+ <script src="/js/app.js"></script>
 </body>
 </html>
