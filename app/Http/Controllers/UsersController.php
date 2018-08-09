@@ -11,9 +11,21 @@ class UsersController extends Controller
 {
     public function __construct()
     {
+        //黑名单--允许未登录用户访问
         $this->middleware('auth',[
-                'except' => ['show','create','store']
+                'except' => ['create','store','index']
             ]);
+        //白名单--只允许未登录用户访问
+        $this->middleware('guest',[
+                'only' => ['create']
+            ]);
+    }
+
+    //用户列表
+    public function index()
+    {
+        $users = User::all();
+        return view('users.index',compact('users'));
     }
 
     //注册
@@ -49,6 +61,8 @@ class UsersController extends Controller
     //编辑页面
     public function edit(User $user)
     {
+        //检查权限
+        $this->authorize('update',$user);
         return view('users.edit', compact('user'));
     }
 
@@ -59,7 +73,8 @@ class UsersController extends Controller
                 'name' => 'required|max:50',
                 'password' => 'nullable|confirmed|min:6',
             ]);
-
+        //检查权限
+        $this->authorize('update',$user);
         $data = [];
         $data['name'] = $request->name;
         if($request->password){
