@@ -108,6 +108,9 @@ footer {
     background-color: transparent;
   }
 }
+  .top {
+    margin-top:55px;
+  }
 </style>
 @yield('style')
 <body>

@@ -13,7 +13,7 @@ class UsersController extends Controller
     {
         //黑名单--允许未登录用户访问
         $this->middleware('auth',[
-                'except' => ['create','store','index']
+                'except' => ['show','create','store','index']
             ]);
         //白名单--只允许未登录用户访问
         $this->middleware('guest',[
@@ -24,7 +24,7 @@ class UsersController extends Controller
     //用户列表
     public function index()
     {
-        $users = User::all();
+        $users = User::paginate(10);
         return view('users.index',compact('users'));
     }
 
