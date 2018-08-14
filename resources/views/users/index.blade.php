@@ -19,10 +19,7 @@
   <h1>所有用户</h1>
   <ul class="users">
     @foreach ($users as $user)
-      <li>
-        <img src="https://pic.qqtn.com/up/2018-7/2018072918092112846.jpg" alt="{{ $user->name }}"  style="height: 100px;width: 100px;" />
-        <a href="{{ route('users.show', $user->id) }}" class="username">{{ $user->name }}</a>
-      </li>
+        @include('users._user')
     @endforeach
   </ul>
   {!! $users->render() !!}

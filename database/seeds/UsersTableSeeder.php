@@ -7,7 +7,7 @@ class UsersTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
-     *
+     * 假数据填充
      * @return void
      */
     public function run()

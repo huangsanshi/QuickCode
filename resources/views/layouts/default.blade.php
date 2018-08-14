@@ -111,6 +111,11 @@ footer {
   .top {
     margin-top:55px;
   }
+  .delete-btn {
+  float: right;
+  position: relative;
+  right: 0;
+}
 </style>
 @yield('style')
 <body>
