@@ -11,7 +11,7 @@ class User extends Authenticatable
     use Notifiable;
 
     /**
-     * The attributes that are mass assignable.
+     * 操作的字段
      *
      * @var array
      */
@@ -20,7 +20,7 @@ class User extends Authenticatable
     ];
 
     /**
-     * The attributes that should be hidden for arrays.
+     * 隐藏的字段属性
      *
      * @var array
      */
@@ -30,4 +30,13 @@ class User extends Authenticatable
 
     //指定数据表，也可以不用指定，默认为文件名同名+s的数据表
     protected $table = 'users';
+
+    public static function boot()
+    {
+        parent::boot();
+
+        static::creating(function ($user){
+            $user->activation_token = str_random(30);
+        });
+    }
 }
