@@ -37,13 +37,10 @@
     border-top: 1px solid #e8e8e8;
     position: relative;
   }
-aside {
-  textarea {
+ aside textarea {
     height: 100px;
     margin-bottom: 5px;
   }
-}
-
 .status_form {
   margin-top: 20px;
 }

@@ -2,10 +2,10 @@
 @section('title', '登录')
 
 @section('content')
-<div class="col-md-offset-2 col-md-8">
+<div class="col-md-offset-2 col-md-8 top">
   <div class="panel panel-default">
     <div class="jumbotron">
-      <h5>登录</h5>
+      <h3>登录</h3>
     </div>
     <div class="panel-body">
       @include('shared._errors')
